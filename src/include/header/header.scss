@@ -1,0 +1,290 @@
+﻿.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    font-size: 0;
+    padding: 12px 0;
+    background: $color_white;
+    box-shadow: 0 2px 7px rgba(31, 31, 31, 0.2);
+    transition: all 350ms ease-in-out;
+    z-index: 10;
+
+    @include mq(1229) {
+        position: static;
+        padding: 0;
+    }
+
+    &.is-fixed {
+        padding: 0;
+        height: 50px;
+
+        @include mq(1229) {
+            height: 80px;
+            padding: 12px 0;
+        }
+
+        .header__logo svg {
+            width: 63px;
+            height: 39px;
+        }
+
+        .header__button .button {
+            border-radius: 0;
+        }
+    }
+
+    &__container {
+        @include mq(1469, 9999) {
+            padding: 0 0 0 24px;
+        } 
+
+        @include mq(1280, 1440) {
+            padding: 0 14px;
+        }
+
+        @include mq(1229) {
+            max-width: 303px;
+            margin: 0 auto;
+            padding: 19px 0 8px;
+        }
+
+        .header__city,
+        .header__menu,
+        .header__social-block {
+            @include mq(1229) {
+                display: none;
+            }
+        }
+    }
+
+    &__logo,
+    &__city,
+    &__menu,
+    &__social-block,
+    &__button {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__logo {
+        margin: 0 18px 0 0;
+
+        @include mq(1229) {
+            margin: 0 21px 0 0;
+        }
+
+        svg {
+            transition: all 350ms ease-in-out;
+
+            @include mq(1229) {
+                width: 63px;
+                height: 39px;
+            }
+        }
+    }
+
+    &__city {
+        width: 19.3%;
+
+        @include mq(1469) {
+            width: 14.5%;
+        }
+
+        @include mq(1229) {
+            width: 100%;
+            margin: 0 0 21px;
+        }
+
+    }
+
+    &__social-block {
+        padding: 2px 0 0;
+        margin: 0 64px 0 0;
+
+        @include mq(1469) {
+            margin: 0 12px 0;
+        }
+
+        @include mq(1469) {
+            margin: 0 12px 0 0;
+        }
+    }
+
+    &__social {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 10px 0 0;
+        transition: all .5s;
+
+        &:hover svg {
+            fill: $color_green2;
+        }
+
+        svg {
+            transition: fill 350ms ease-in-out;
+        }
+    }
+
+    &__button {
+        @include mq(1469) {
+            width: 15%;
+            text-align: right;
+        }
+
+        @include mq(1229) {
+            width: auto;
+            margin: 0 43px 0 0;
+        }
+    }
+
+
+    // hamburger
+    &__container-hamburger {
+        display: inline-block;
+        vertical-align: top;
+        margin: 6px 0 21px 7px;
+
+        @include mq(1230, 9999) {
+            display: none;
+        }
+    }
+    .hamburger {
+        padding: 8px 0 0;
+        display: inline-block;
+        cursor: pointer;
+        transition-property: opacity, -webkit-filter;
+        transition-property: opacity, filter;
+        transition-property: opacity, filter, -webkit-filter;
+        transition-duration: 0.15s;
+        transition-timing-function: linear;
+        font: inherit;
+        color: inherit;
+        text-transform: none;
+        background-color: transparent;
+        border: 0;
+        margin: 0;
+        overflow: visible; 
+    
+        .hamburger-box {
+            width: 32px;
+            height: 12px;
+            display: inline-block;
+            position: relative; 
+        }
+    
+        .hamburger-inner {
+            display: block;
+        }
+
+        .hamburger-inner {
+            top: 4px;
+        }
+    
+        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+            width: 32px;
+            height: 3px;
+            background: $color_green2;
+            border-radius: 4px;
+            position: absolute;
+            transition-property: -webkit-transform;
+            transition-property: transform;
+            transition-property: transform, -webkit-transform;
+            transition-duration: 0.35s;
+            transition-timing-function: ease; 
+        }
+    
+        .hamburger-inner::before, .hamburger-inner::after {
+            content: "";
+            display: block; 
+        }
+    
+        .hamburger-inner::before {
+            top: -10px; 
+        }
+        
+        .hamburger-inner::after {
+            bottom: -10px; 
+        }
+    
+        &.is-active .hamburger-inner {
+            transform: translate3d(0, 0, 0) rotate(45deg); 
+        }
+        
+        &.is-active .hamburger-inner::before {
+            transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+            opacity: 0; 
+        }
+        
+        &.is-active .hamburger-inner::after {
+            transform: translate3d(0, -20px, 0) rotate(-90deg);
+            top: 20px; 
+        }
+    }
+    
+
+    
+    //Mobile Menu
+    .mobile-menu {
+        position: relative;
+        overflow: hidden;
+        background: $color_green2;
+
+        &__button {
+            @include mq(992) {
+                float: right;
+                padding: 28px 18px;
+            }
+
+            svg {
+                transition: transform 350ms ease-in-out;
+            }
+
+            &:hover {
+                box-shadow: none;
+
+                svg {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        // slide menu
+        &__menu {
+            display: none;
+            width: 100%;
+            height: 100%;
+            padding: 28px 0 65px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        &__number {
+            display: inline-block;
+            margin: 0 0 30px;
+            padding: 0 20px;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1;
+            color: $color_white;
+        }
+
+        &__text {
+            padding: 0 20px;
+            margin: 0 0 14px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.7;
+            color: $color_gray4;
+        }
+    }
+
+    hr {
+        width: 100%;
+        height: 1px;
+        background: #e8e8e8;
+        opacity: 0.15;
+    }
+
+}

@@ -1,0 +1,62 @@
+.metka {
+    font-size: 0;
+    padding: 7px 8px;
+
+    &__title {
+        margin: 0 0 16px;
+        font-family: $Open_Sans;
+        font-size: 18px;
+        font-weight: 700;
+        color: $color_black;
+    }
+
+    &__block {
+        display: inline-block;
+        vertical-align: top;
+
+        &:first-child {
+            width: 90px;
+        }
+
+        &:last-child {
+            width: calc(100% - 90px);
+            padding-left: 17px;
+
+            @include mq(767) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        @include mq(767) {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        position: relative;
+        padding: 0 0 0 26px;
+        margin: 0 0 11px;
+        font-family: $Open_Sans;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        color: $color_black;
+
+        &:last-child {
+            @include mq(767) {
+                margin: 0;
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 3px;
+            left: 0;
+        }
+    }
+}
+
+.ymaps-2-1-74-balloon__tail {
+    left: calc(50% - 17px) !important;
+}

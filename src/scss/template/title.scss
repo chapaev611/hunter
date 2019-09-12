@@ -1,0 +1,17 @@
+
+.title {
+    font-family: $EB_Garamond;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: $color_black;
+
+    @include mq(1230) {
+        font-size: 32px;
+    }
+    
+    @include mq(767) {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,178 @@
+.form {
+    max-width: 47%;
+    margin: 0 auto;
+
+    @include mq(1470) {
+        max-width: 48%;
+    }
+
+    @include mq(1229) {
+        max-width: 100%;
+        padding: 42px 10px 0;
+    }
+
+    &__group {
+        position: relative;
+        display: inline-block;
+        vertical-align: bottom;
+        width: 100%;
+        margin: 0 0 24px;
+        text-align: left;
+        font-size: 18px;
+        color: $color_gray2;
+
+        @include mq(1229) {
+            max-width: 51%;
+        }
+
+        @include mq(767) {
+            max-width: 100%;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        font-family: $Open_Sans;
+        font-size: 16px;
+        line-height: 30px;
+        color: $color_white;
+        background: transparent;
+        border: none;
+        pointer-events: none;
+        transition: all 350ms ease-in-out;
+
+        &--active {
+            top: -15px;
+            font-size: 12px;
+            letter-spacing: 0.025em;
+            color: $color_gray3;
+        }
+    }
+
+    &__input {
+        position: relative;
+        padding: 10px 0 4px;
+        width: 100%;
+        height: 50px;
+        font-family: $Open_Sans;
+        font-size: 16px;
+        line-height: 30px;
+        color: $color_white;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(white, 0.2);
+        border-radius: 0;
+        transition: border-color 350ms;
+
+        &.is-error {
+            border-color: rgba($color_red, 0.51) !important;
+
+            &:focus:not(.has-value) + .form__label {
+                color: $color_red;
+            }
+
+            & + label {
+                color: rgba($color_error, 0.51);
+            }
+        }
+
+        &:focus, &.has-value {
+            border-color: rgba(255,255,255, 1);
+        }
+
+        &:focus + .form__label,
+        &.has-value + .form__label {
+            top: -15px;
+            color: $color_white;
+            opacity: 0.28;
+            transition: all 350ms ease-in-out;
+        }
+
+        &.has-value.is-error + label {
+            color: $color_error;
+        }
+    }
+
+    &__recapcha {
+        padding: 16px 0 0;
+        margin: 0 0 31px;
+
+        // @include mq(767) {
+        //     transform: scale(.96);
+        //     transform-origin: 0 0;
+        // }
+
+        .g-recaptcha {
+            max-width: 302px;
+            margin: 0 auto;
+
+            @include mq(767) {
+                margin: 0;
+            }
+        }
+    }
+
+    &__input-float {
+        position: relative;
+        max-width: 382px;
+        margin: 0 auto;
+        text-align: left;
+
+        .error-message {
+            position: absolute;
+            top: auto;
+            right: auto;
+        }
+    }
+
+    &__button {
+        margin: 0 0 26px;
+    }
+
+    .checkbox {
+        position: relative;
+        display: block;
+        padding: 0 0 0 23px;
+        font-family: $Open_Sans;
+        font-size: 13px;
+        line-height: 1.25;
+        font-weight: 300;
+        color: white;
+        cursor: pointer;
+    }
+
+
+    .checkbox .checkbox-icon {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        background: $color_white;
+        transition: border 250ms ease-in-out;
+        cursor: pointer;
+        transition: background 250ms ease-in-out, border 250ms ease-in-out;
+    }
+
+    .checkbox .checkbox-icon svg {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        opacity: 0;
+        width: 13px;
+        height: 13px;
+        transition: opacity 250ms ease-in-out;
+    }
+
+    input:checked + .checkbox .checkbox-icon svg {
+        opacity: 1;
+    }
+
+    &__textarea {
+        max-height: 96px;
+        min-height: 96px;
+    }
+}

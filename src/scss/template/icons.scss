@@ -1,0 +1,27 @@
+.svg-logo {
+    width: 91px;
+    height: 56px;
+
+    .cls-1 {
+        fill: $color_green;
+    }
+
+    .cls-2 {
+        fill: $color_yellow2;
+    }
+}
+
+.svg-facebook {
+    width: 30px;
+    height: 30px;
+    fill: $color_gray6;
+}
+
+.svg-facebook-2 {
+    fill: $color_white;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    width: 32px;
+    height: 32px;
+}

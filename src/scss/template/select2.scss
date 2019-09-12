@@ -1,0 +1,102 @@
+.select2-container {
+    &--open {
+        .select2-dropdown {
+            min-width: 180px;
+        }
+
+        .select2-selection {
+            color: $color_black;
+        }
+
+        .select2-selection__arrow {
+            background-image: url(../assets/img/icons/metka_adres2.svg);
+        }
+    }
+}
+
+.select2-selection {
+    position: relative;
+    padding: 0 30px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.35px;
+    color: $color_gray7;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.25s ease-in-out;
+
+    &:hover {
+        color: $color_black;
+
+        .select2-selection__arrow {
+            background-image: url(../assets/img/icons/metka_adres2.svg);
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 16px;
+        height: 18px;
+        background: url(../assets/img/icons/metka_adres.svg) no-repeat;
+        transform: translateY(-50%);
+        transition: all 0.25s ease-out;
+
+    }
+}
+
+.select2-dropdown {
+    min-width: 124px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background: $color_white;
+    box-shadow:
+        0 0 5px 0 rgba($color_black, 0.08),
+        0 8px 24px 0 rgba($color_gray5, 0.2);
+
+    &--below {
+        top: 15px;
+
+        &::before {
+            top: -6px;
+            left: 20%;
+            margin: 0 0 0 -7px;
+        }
+    }
+
+    &--above {
+        top: -15px;
+
+        &::before {
+            left: 55px;
+            bottom: -6px;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: $color_white;
+        transform: rotate(45deg);
+    }
+}
+
+.select2-results {
+    &__option {
+        padding: 10px 0;
+        color: $color_gray7;
+        transition: color 350ms ease-in-out;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            color: #284434;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.menu {
+    width: 53.2%;
+    padding: 2px 0 0;
+
+    @include mq(1470) {
+        width: auto;
+        margin: 0 20px 0 0;
+    }
+
+    @include mq(1229) {
+        margin: 0 0 16px;
+        padding: 34px 0 0;
+    }
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__item {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 36px 0 0;
+
+        @include mq(1470) {
+            margin: 0 34px 0 0;
+        }
+
+        @include mq(1229) {
+            display: block;
+            margin: 0 0 20px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        font-family: $Open_Sans;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 30px;
+        text-transform: uppercase;
+        letter-spacing: 0.35px;
+        color: $color_black2;
+        transition: color 350ms ease-in-out;
+
+        @include mq(1229) {
+            color: white;
+        }
+
+        &:hover {
+            color: $color_gray8;
+        }
+    }
+}

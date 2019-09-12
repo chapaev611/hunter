@@ -1,0 +1,46 @@
+.contacts {
+    font-size: 0;
+
+    &__block {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+
+        @include mq(1229) {
+            width: 100%;
+        }
+
+        &:first-child {
+            padding: 37px 0 0;
+        }
+    }
+
+    &__phone {
+        margin: 0 0 6px;
+    }
+
+    &__link {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 26px;
+        font-weight: 400;
+        color: white;
+    }
+
+    &__email {
+        margin: 0 0 26px;
+        font-size: 18px;
+        font-weight: 400;
+        color: white;
+        opacity: 0.5;
+    }
+
+    &__social {
+        margin: 0 0 37px;
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+    }
+
+
+}
